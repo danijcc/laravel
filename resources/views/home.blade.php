@@ -1,16 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home</title>
-</head>
-<body>
-    <h1>Home</h1>
-    {{-- pasar datos a las vistas --}}
-    {{-- es importante que las vistas tengan la minima logica posible solo imprimir
-    variables, hacer estructuras de control ejmp: if else hacer loop  --}}
+    {{-- Contenido repetible en todas las plantillas en este caso traemos con
+    @extends(layout) todo el contenido de la plantilla o vista layout --}}
+    @extends('layout')
+     {{-- implementamos la directiva @yield("") aqui a travez de @section('content')
+    este contenido sera unico para cada web y dinamico para la directiva en el archivo
+    layout --}}
+    @section('title','Home')
+        {{-- Home --}}
+    @section('content')
+    <h1>About</h1>
+    @endsection
+    {{--
+
+       pasar datos a las vistas  
+        1.- es importante que las vistas tengan la minima logica posible solo imprimir
+    variables, hacer estructuras de control ejmp: if else hacer loop.
+    2- podemos imprimir una variable utilizando {{}} ya que proteje de inyeccion
+    de codugo en vez de echo
+
     Bienvenido@ <?php echo $nombre  ?? "Invitado"?>
-</body>
-</html>
+    Bienvenido@ {{$nombre  ?? "Invitado"}} 
+
+    --}}
