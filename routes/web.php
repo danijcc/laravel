@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -89,7 +89,7 @@ Route::get('/', function(){
 ---------------------------------------------------------------------                           
 ---------------------------opcion 3----------------------------------
 tambien podemos pasarlo con la funcion compact siempre y cuando 
-el nombre de la variable, valor de la variable sean el mismo
+el nombre de la variable y el valor de la variable sean el mismo
 
 Route::get('/', function(){
     $nombre = "Dani";
@@ -107,15 +107,15 @@ Route::view('/',"home", ['nombre' => 'Dani'] );
  pasamos el siguiente Aray de inf mediante la funcion compact a la vista
  portfolio 
 */
-$portfolio = [
-    ['title' => 'Proyecto #1'],
-    ['title' => 'Proyecto #2'],
-    ['title' => 'Proyecto #3'],
-    ['title' => 'Proyecto #4'],
-];
+
 Route::view('/','home')->name('home');
 Route::view('/about', 'about')->name('about');
-Route::view('/portfolio', 'portfolio', compact('portfolio'))->name('portfolio');
-Route::view('/contact', 'contact')->name('contact');
 
-//video 11
+//pasamos la url portfolio como primer parametro y luego pasamos el controlador 
+// que se va a ejecutar cuando accedamos a la url como segundo parametro 
+//para acceder al metodo @index de portfolio controller lo hacemos con un @
+Route::get('/portfolio','PortfolioController@index')->name('portfolio');
+Route::view('/contact', 'contact')->name('contact');
+//Route::resource('projects','PortfolioCotroller');
+
+//video 13
