@@ -118,4 +118,4 @@ Route::get('/portfolio','PortfolioController@index')->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
 //Route::resource('projects','PortfolioCotroller');
 
-//video 13
+//video 13-04:26
