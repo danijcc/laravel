@@ -6,5 +6,16 @@
     layout --}}
     @section('title','Contact')
     @section('content')
-    <h1>Contact</h1>
+        <h1>Contact</h1>
+        {{-- los formularios por defecto utiliza el metodo get para envia los datos lo hace 
+        por la url pero podemos cambia a post --}}
+        <form method="POST" action="{{ route('contact') }}">
+          @csrf
+          <input name="name" placeholder="Nombre..."><br>
+          <input type="email" name="email" placeholder="Email..."><br>
+          <input name="subject" placeholder="Asunto..."><br>
+          <textarea name="content" placeholder="Mensaje..."></textarea><br>
+          <button>Enviar</button>
+        </form>
+
     @endsection

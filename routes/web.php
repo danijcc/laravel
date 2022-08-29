@@ -117,5 +117,7 @@ Route::view('/about', 'about')->name('about');
 Route::get('/portfolio','PortfolioController@index')->name('portfolio');
 Route::view('/contact', 'contact')->name('contact');
 //Route::resource('projects','PortfolioCotroller');
+//creamos la siguiente ruta para responder al metodo post del formulario
+Route::post('contact','MessagesController@store');
 
-//video 13-04:26
+//video 14
