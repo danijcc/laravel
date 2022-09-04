@@ -7,7 +7,7 @@
     @section('title','Home')
         {{-- Home --}}
     @section('content')
-    <h1>About</h1>
+    <h1>{{ __('Home')}}</h1>
     @endsection
     {{--
 

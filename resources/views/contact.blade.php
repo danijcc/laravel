@@ -6,7 +6,7 @@
     layout --}}
     @section('title','Contact')
     @section('content')
-        <h1>Contact</h1>
+        <h1>{{ __('Contact')}}</h1>
         {{-- @if($errors->any()) 
             <ul>
             @foreach($errors->all() as $error)
@@ -29,7 +29,7 @@
 
           <textarea name="content" placeholder="Mensaje..."></textarea><br>
           {!! $errors->first('content','<small>:message</small><br>') !!}
-          <button>Enviar</button>
+          <button>@lang('Send')</button>
         </form>
 
     @endsection

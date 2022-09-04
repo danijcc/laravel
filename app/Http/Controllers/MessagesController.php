@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-
+use App\Mail\MessageReceived;
+use Illuminate\Support\Facades\Mail;
 
 class MessagesController extends Controller
 {
@@ -15,8 +15,12 @@ class MessagesController extends Controller
             'content' => 'required'
            
 
-        ]);
+        ],[
+            'name.required' => __('I need your name')
+        ]); 
 
-        return 'Datos validados';
+        Mail::to('jorge@aprendible.com')->send(new MessageReceived) ;
+           
+         return 'Mensaje Enviado';
     }
 }
