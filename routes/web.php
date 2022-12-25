@@ -109,15 +109,18 @@ Route::view('/',"home", ['nombre' => 'Dani'] );
 */
 
 Route::view('/','home')->name('home');
-Route::view('/about', 'about')->name('about');
+Route::view('/quienes-somos', 'about')->name('about');
 
 //pasamos la url portfolio como primer parametro y luego pasamos el controlador 
 // que se va a ejecutar cuando accedamos a la url como segundo parametro 
 //para acceder al metodo @index de portfolio controller lo hacemos con un @
-Route::get('/portfolio','PortfolioController@index')->name('portfolio');
-Route::view('/contact', 'contact')->name('contact');
+Route::get('/portafolio','ProjectController@index')->name('projects.index');
+Route::get('/portafolio/crear','ProjectController@create')->name('projects.create');
+Route::post('/portafolio','ProjectController@store')->name('projects.store');
+Route::get('/portafolio/{project}','ProjectController@show')->name('projects.show');
+Route::view('/contacto', 'contact')->name('contact');
 //Route::resource('projects','PortfolioCotroller');
 //creamos la siguiente ruta para responder al metodo post del formulario
-Route::post('contact','MessagesController@store');
+Route::post('contact','MessagesController@store')->name('messages.store');
 
-//video 17 = 07:35
+//video 23 = 2:10

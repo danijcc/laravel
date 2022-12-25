@@ -1,3 +1,4 @@
+                  
   {{-- Contenido repetible en todas las plantillas en este caso traemos con
     @extends(layout) todo el contenido de la plantilla o vista layout --}}
     @extends('layout')
@@ -6,7 +7,8 @@
     layout --}}
     @section('title','Portfolio')
     @section('content')
-        <h1>Portfolio</h1> 
+    <h1>Portafolio</h1> 
+    <a href="{{ route('projects.create') }}">Crear proyectos</a>
         <ul>
           {{-- aca declaramos un if para obtener una respuesta en el caso que el array
            este vacio y no haya elementos para mostrar o mejor aun lo podemos hacer con 
@@ -24,13 +26,15 @@
               del ciclo que estamos utlilizando entre otros detalles tambie podemos usar 
               <pre>{{ $loop->last ? 'Es el ultimo':''}}</pre>si queremos preguntar si el
                ultimo <pre>{{ $loop->first ? 'Es el primero':''}}</pre> si queremos preguntar
-               si el primero --}}
-              @forelse($portfolio as $portfolioItem)
-                  <li> {{$portfolioItem['title']}}  </li>
+               si el primero video 5--}}
+              @forelse($projects as $project)
+                    <li>
+                        <a href="{{ route('projects.show', $project) }}"> {{$project->title}}</a> <br>
+                    </li>
               @empty
                   <li> No hay proyectos para mostrar</li> 
               @endforelse
-            
+              {{ $projects->links() }}
          </ul>
      @endsection
     

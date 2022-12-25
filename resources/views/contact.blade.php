@@ -16,7 +16,7 @@
         @endif --}}
         {{-- los formularios por defecto utiliza el metodo get para envia los datos lo hace 
         por la url pero podemos cambia a post --}}
-        <form method="POST" action="{{ route('contact') }}">
+        <form method="POST" action="{{ route('messages.store') }}">
           @csrf
           <input name="name" placeholder="Nombre..." value="{{old('name')}}"><br>
           {!! $errors->first('name','<small>:message</small><br>') !!}
