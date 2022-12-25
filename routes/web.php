@@ -123,4 +123,4 @@ Route::view('/contacto', 'contact')->name('contact');
 //creamos la siguiente ruta para responder al metodo post del formulario
 Route::post('contact','MessagesController@store')->name('messages.store');
 
-//video 25 = 1:34 
+//video 26 = 
