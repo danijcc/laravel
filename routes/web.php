@@ -116,6 +116,8 @@ Route::view('/quienes-somos', 'about')->name('about');
 //para acceder al metodo @index de portfolio controller lo hacemos con un @
 Route::get('/portafolio','ProjectController@index')->name('projects.index');
 Route::get('/portafolio/crear','ProjectController@create')->name('projects.create');
+Route::get('/portafolio/{project}/editar','ProjectController@edit')->name('projects.edit');  
+Route::patch('/portafolio/{project}','ProjectController@update')->name('projects.update');  
 Route::post('/portafolio','ProjectController@store')->name('projects.store');
 Route::get('/portafolio/{project}','ProjectController@show')->name('projects.show');
 Route::view('/contacto', 'contact')->name('contact');
@@ -123,4 +125,4 @@ Route::view('/contacto', 'contact')->name('contact');
 //creamos la siguiente ruta para responder al metodo post del formulario
 Route::post('contact','MessagesController@store')->name('messages.store');
 
-//video 26 = 
+//video 28 = 
