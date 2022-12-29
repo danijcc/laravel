@@ -7,13 +7,8 @@
     @section('title','Contact')
     @section('content')
         <h1>{{ __('Contact')}}</h1>
-        {{-- @if($errors->any()) 
-            <ul>
-            @foreach($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-            </ul> 
-        @endif --}}
+               
+        
         {{-- los formularios por defecto utiliza el metodo get para envia los datos lo hace 
         por la url pero podemos cambia a post --}}
         <form method="POST" action="{{ route('messages.store') }}">
@@ -31,5 +26,5 @@
           {!! $errors->first('content','<small>:message</small><br>') !!}
           <button>@lang('Send')</button>
         </form>
-
+       
     @endsection

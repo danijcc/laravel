@@ -5,6 +5,7 @@
     @section('title','Crear proyecto')
     @section('content')
         <h1>Crear nuevo Proyecto</h1> 
+        
 
         @include('partials.validation-errors')
 

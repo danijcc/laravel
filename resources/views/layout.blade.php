@@ -19,6 +19,8 @@
     posteriormente para implementar esto en alguna otra pagina o vista usamos
     la directiva de blade @extends('layout')  --}}
     @include('partials.nav')
+    {{-- mensajes flash --}}
+    @include('partials.session-status')
     {{-- para agregar contenido dinamico usamos la directiva @yield('') podemos 
     agregar varios en la misma pagina y para implementarlo lo hacemos con 
     @section(<nombre especificado>) y al finalizar @endsection dentro de la misma 

@@ -111,18 +111,29 @@ Route::view('/',"home", ['nombre' => 'Dani'] );
 Route::view('/','home')->name('home');
 Route::view('/quienes-somos', 'about')->name('about');
 
+
+
+Route::resource('portafolio', 'ProjectController')
+->names('projects')
+->parameters(['portafolio'=>'project']); 
+
 //pasamos la url portfolio como primer parametro y luego pasamos el controlador 
 // que se va a ejecutar cuando accedamos a la url como segundo parametro 
 //para acceder al metodo @index de portfolio controller lo hacemos con un @
-Route::get('/portafolio','ProjectController@index')->name('projects.index');
-Route::get('/portafolio/crear','ProjectController@create')->name('projects.create');
-Route::get('/portafolio/{project}/editar','ProjectController@edit')->name('projects.edit');  
-Route::patch('/portafolio/{project}','ProjectController@update')->name('projects.update');  
-Route::post('/portafolio','ProjectController@store')->name('projects.store');
-Route::get('/portafolio/{project}','ProjectController@show')->name('projects.show');
+// Route::get('/portafolio','ProjectController@index')->name('projects.index');
+// Route::get('/portafolio/crear','ProjectController@create')->name('projects.create');
+
+// Route::get('/portafolio/{project}/editar','ProjectController@edit')->name('projects.edit');  
+// Route::patch('/portafolio/{project}','ProjectController@update')->name('projects.update');  
+
+// Route::post('/portafolio','ProjectController@store')->name('projects.store');
+// Route::get('/portafolio/{project}','ProjectController@show')->name('projects.show');
+
+// Route::delete('/portafolio/{project}', 'Projectcontroller@destroy')->name('projects.destroy'); 
+
 Route::view('/contacto', 'contact')->name('contact');
 //Route::resource('projects','PortfolioCotroller');
 //creamos la siguiente ruta para responder al metodo post del formulario
 Route::post('contact','MessagesController@store')->name('messages.store');
 
-//video 28 = 
+//video 31 = 
